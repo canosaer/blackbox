@@ -1,0 +1,59 @@
+@use 'variables';
+@use 'mixins';
+
+.terminal{
+	width: 100%;
+    padding: 3rem;
+    height: 100vh;
+    @include mixins.default-grid;
+    position: relative;
+    max-width: 80rem;
+    place-self: center center;
+}
+
+
+.input{
+    display: flex;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    z-index:2;
+    align-self: flex-end;
+    width: 100%;
+    padding: 3rem;
+    
+
+    &__prompt{
+        font-size: 1.5rem;
+    }
+
+    &__text{
+        width: 100%;
+        color: #d0fc7e;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 1.25rem;
+        font-family: 'Press Start 2P', cursive;
+        position: relative;
+        margin-left: 0.4rem;
+    }
+}
+
+
+
+
+
+
+.crt-terminal{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+
+.crt-screen-effects{
+    display: none;
+}
+
+
+
+//#d0fc7e

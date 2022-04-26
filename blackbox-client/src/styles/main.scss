@@ -1,0 +1,90 @@
+/* 
+==============================================
+CONTENT:	BlackBox
+AUTHOR:		Eric Canosa
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Initialization
+1. Partials
+2. Fonts
+3. General
+4. Utility
+
+==============================================
+*/
+
+/* 0. Initialization ========================= */
+@use 'reset';
+@use 'variables';
+@use 'mixins';
+
+/* 1. Partials =============================== */
+@use 'terminal';
+
+/* 2. Fonts ================================== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* 3. General ================================ */
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	background: whitesmoke;
+	font-family: 'Press Start 2P', cursive;
+	color: #d0fc7e;
+}
+
+#root{
+	@include mixins.default-grid;
+}
+
+main{
+	@include mixins.default-grid;
+}
+
+/* 4. Utility ================================ */
+
+.hidden{
+	display: none;
+}
+
+.invisible{
+	visibility: hidden;
+}
+
+.transparent{
+	opacity: 0;
+}
+
+.dimmer{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 0vh;
+	background-color: whitesmoke;
+	opacity: 0.5;
+	left: 0;
+	top: 0;
+	transition: .3s background-color ease-in;
+
+	&_open{
+		height: 100vh;
+		background-color: black;
+	}
+}
+
+.send-to-rear{
+	z-index: -99;
+}
+
+.bring-to-front{
+	z-index: 99;
+}
