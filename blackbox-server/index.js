@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const { randomUUID } = require('crypto')
 const app = express()
 const port = 1337
@@ -6,6 +7,7 @@ const port = 1337
 //creates front-end
 app.use(express.static('blackbox-client'))
 app.use(express.json())
+app.use(cors())
 
 app.get('/api', (req, res) => {
   res.send('API operational!')
@@ -20,7 +22,6 @@ app.post('/api/message', (req, res) => {
 
     messages.push({
         content: req.body.content,
-        username: req.body.username,
         timestamp: Date.now(),
         id: randomUUID(),
     })
@@ -34,7 +35,6 @@ app.listen(port, () => {
 let messages = [
     {
         content: 'Hello',
-        username: 'test user',
         timestamp: Date.now(),
         id: randomUUID(),
     }
