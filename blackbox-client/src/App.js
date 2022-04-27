@@ -28,6 +28,7 @@ function App() {
       .catch(function (error) {
           console.log(error);
       });
+      setOutbound('')
     }
   }
 

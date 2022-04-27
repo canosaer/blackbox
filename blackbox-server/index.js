@@ -33,9 +33,5 @@ app.listen(port, () => {
 })
 
 let messages = [
-    {
-        content: 'Hello',
-        timestamp: Date.now(),
-        id: randomUUID(),
-    }
+
 ]
